@@ -4,14 +4,12 @@
 .text_color{
     color: #000;
 }
-.bg_cards{
-    background-color: #6899b4;
-}
 
 .card {
-    margin-bottom: 20px; /* Agregar espacio entre las tarjetas */
+    margin-bottom: 20px;
     height: 22rem;
 }
+
 body{
     background-color: #f0f0f0;
 }
