@@ -1,0 +1,23 @@
+.bg{
+    background-color: #eae6ff;
+}
+.text_color{
+    color: #000;
+}
+.bg_cards{
+    background-color: #6899b4;
+}
+
+.card {
+    margin-bottom: 20px; /* Agregar espacio entre las tarjetas */
+    height: 22rem;
+}
+body{
+    background-color: #f0f0f0;
+}
+
+.btn-outline-primary, .btn-primary{
+    color: #fff;
+    background-color: #4a6d80;
+    border-color: #4a6d80;
+}
