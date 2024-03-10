@@ -83,22 +83,22 @@
                         <h3>Datos personales</h3>
                         <div class="form-group">
                             <label for="fullName">Nombre completo</label>
-                            <input type="text" class="form-control" id="fullName"
+                            <input type="text" class="form-control" id="NombreCompleto"
                                 placeholder="Ingresa tu nombre completo">
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
                                 placeholder="Ingresa tu correo electrónico">
                         </div>
                         <div class="form-group">
                             <label for="phone">Teléfono</label>
-                            <input type="tel" class="form-control" id="phone"
+                            <input type="tel" class="form-control" id="Celular"
                                 placeholder="Ingresa tu número de teléfono">
                         </div>
                         <div class="form-group">
                             <label for="address">Dirección</label>
-                            <input type="text" class="form-control" id="address" placeholder="Ingresa tu dirección">
+                            <input type="text" class="form-control" id="Direccion" placeholder="Ingresa tu dirección">
                         </div>
                     </div>
                 </form>
@@ -110,7 +110,7 @@
                         <h3>Detalles del proyecto</h3>
                         <div class="form-group">
                             <label for="projectType">Tipo de proyecto</label>
-                            <select class="form-control" id="projectType">
+                            <select class="form-control" id="TipoDeProyecto">
                                 <option value="residential">Residencial</option>
                                 <option value="commercial">Comercial</option>
                                 <option value="industrial">Industrial</option>
@@ -119,17 +119,17 @@
                         </div>
                         <div class="form-group">
                             <label for="projectLocation">Ubicación del proyecto</label>
-                            <input type="text" class="form-control" id="projectLocation"
+                            <input type="text" class="form-control" id="Localidad"
                                 placeholder="Ingresa la ubicación del proyecto">
                         </div>
                         <div class="form-group">
                             <label for="projectBudget">Presupuesto del proyecto</label>
-                            <input type="number" class="form-control" id="projectBudget"
+                            <input type="number" class="form-control" id="Presupuesto"
                                 placeholder="Ingresa el presupuesto del proyecto">
                         </div>
                         <div class="form-group">
                             <label for="projectDescription">Descripción del proyecto</label>
-                            <textarea class="form-control" id="projectDescription" rows="3"
+                            <textarea class="form-control" id="Descripcion" rows="3"
                                 placeholder="Describe tu proyecto"></textarea>
                         </div>
                     </div>
@@ -144,22 +144,26 @@
                     <div class="section">
                         <h3>Términos y condiciones</h3>
                         <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="termsAndConditions">
+                            <input type="checkbox" class="form-check-input" id="Condiciones">
                             <label class="form-check-label" for="termsAndConditions">Acepto los términos y
                                 condiciones</label>
                         </div>
                         <div class="form-group">
                             <label for="signature">Identificación</label>
-                            <input type="number" class="form-control" id="numberId"
+                            <input type="number" class="form-control" id="Identificacion"
                                 placeholder="Ingresa tu número de identificación">
                         </div>
                         <div class="form-group">
                             <label for="date">Fecha</label>
-                            <input type="date" class="form-control" id="date">
+                            <input type="date" class="form-control" id="Fecha">
                         </div>
-                        <div class="form-group">
-                            <label for="captcha">Captcha</label>
-                            <input type="text" class="form-control" id="captcha" placeholder="Ingresa el captcha">
+                        <div class="form-group form-check" style="margin-top: 10px;">
+                            <input type="checkbox" class=" accordion" id="robotCheck">
+                            <label class="form-check-label" for="robotCheck">
+                                No soy un robot <img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/375px-RecaptchaLogo.svg.png"
+                                    alt="Logo de Captcha" style="width: 70px; height: auto;">
+                            </label>
                         </div>
                     </div>
                     <div class="space" data-my="10px" style="margin-top: 10px;"></div>

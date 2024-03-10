@@ -1,35 +1,47 @@
 const formIds = ['personalDataForm', 'projectDetailsForm', 'termsAndConditionsForm'];
 
 function submitForm() {
+    let isAnyFormInvalid = false;
+
     formIds.forEach(formId => {
         const form = document.getElementById(formId);
         const inputs = form.querySelectorAll('input, textarea, select');
+        
+        const requiredFields = ['phone', 'projectBudget', 'numberId'];
+        const isFormANumber = Array.from(inputs).every(input => requiredFields.includes(input.name) ? !isNaN(input.value) : true);
+        const isFormComplete = Array.from(inputs).every(input => input.value.trim() !== '' && input.type !== 'checkbox' ? true : input.checked);
+        let incompleteFields = [];
 
-        // Verificar si el formulario está completo
-        const isFormComplete = Array.from(inputs).every(input => input.value.trim() !== '');
-
-        if (!isFormComplete) {
+        if (!isFormANumber || !isFormComplete) {
             inputs.forEach(input => {
                 if (input.value.trim() === '') {
-                    input.classList.add('invalid'); // Agregar clase Bootstrap para resaltar
+                    input.classList.add('invalid');
+                    incompleteFields.push(input.id);
                 } else {
-                    input.classList.remove('is-invalid'); // Eliminar la clase Bootstrap si el campo es válido
+                    input.classList.remove('invalid');
                 }
             });
 
-            appendAlert('Por favor, completa todos los campos.', 'danger');
-
-            return;
+            let alertMessage = 'Por favor, completa los campos correctamente, revisa el captcha y los términos y condiciones.';
+            if (!isFormANumber) {
+                alertMessage += ' Los campos de teléfono, presupuesto e identificación deben ser números.';
+            }
+            if (incompleteFields.length > 0) {
+                alertMessage += ` Los campos erróneos son: ${incompleteFields.join(', ')}.`;
+            }
+            appendAlert(alertMessage, 'danger');
+            isAnyFormInvalid = true;
         }
-        appendAlert('El formulario se ha enviado correctamente.', 'success');
-        return;
-        // Código adicional para enviar el formulario
     });
+
+    if (!isAnyFormInvalid) {
+        appendAlert('Todos los formularios se han enviado correctamente.', 'success');
+    }
 }
 
 const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 const appendAlert = (message, type) => {
-    alertPlaceholder.innerHTML = ''; // Limpiar alertas previas
+    alertPlaceholder.innerHTML = ''; 
     const wrapper = document.createElement('div');
     wrapper.innerHTML = [
         `<div class="alert alert-${type} alert-dismissible" role="alert">`,
