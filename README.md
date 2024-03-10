@@ -22,7 +22,7 @@ Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
 Puedes usar y ver el proyecto en el siguiente link:
 
-https://65ecd20bf0eed8eaac4a2d62--shiny-truffle-62b348.netlify.app/
+https://main--shiny-truffle-62b348.netlify.app
 
 Al momento de usar bootstrap utilizo las clases de bootstrap y eliminé lo que no utilizaba para que el proyecto no pesara tanto, ya que al descargar bootstrap con npm descarga muchos archivos.
 
